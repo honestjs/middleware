@@ -1,0 +1,49 @@
+{
+	"name": "@honestjs/middleware",
+	"version": "0.1.0",
+	"author": "Orkhan Karimov <karimovok1@gmail.com> (https://github.com/kerimovok)",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/honestjs/middleware.git"
+	},
+	"main": "dist/index.js",
+	"module": "dist/index.js",
+	"peerDependencies": {
+		"honestjs": "^0.1.1"
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"prettier": "3.5.3"
+	},
+	"description": "Collection of middleware for HonestJS",
+	"files": [
+		"dist"
+	],
+	"homepage": "https://github.com/honestjs/middleware",
+	"keywords": [
+		"nodejs",
+		"bun",
+		"deno",
+		"javascript",
+		"typescript",
+		"node",
+		"framework",
+		"web-framework",
+		"hono",
+		"nest",
+		"honest"
+	],
+	"license": "MIT",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org"
+	},
+	"scripts": {
+		"clean": "rm -rf dist",
+		"build": "bun run clean && bun build ./src/index.ts --outdir=dist --target=node --minify --external honestjs && bun run build:types",
+		"build:types": "tsc --emitDeclarationOnly --declaration --outDir dist",
+		"format": "prettier --write .",
+		"format:check": "prettier --check ."
+	},
+	"type": "module",
+	"types": "dist/index.d.ts"
+}
