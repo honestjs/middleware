@@ -1,20 +1,42 @@
-name: NPM Package
+name: Release
 
 on:
-    release:
-        types: [created]
+    push:
+        branches:
+            - main
 
 jobs:
-    publish-npm:
+    release:
+        name: Release
         runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            pull-requests: write
         steps:
-            - uses: actions/checkout@v4
-            - uses: oven-sh/setup-bun@v2
+            - name: Checkout
+              uses: actions/checkout@v4
               with:
-                  bun-version: latest
-                  registry-url: https://registry.npmjs.org/
-            - run: bun install --frozen-lockfile
-            - run: bun run build
-            - run: npm publish --access public
+                  fetch-depth: 0
+
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 10.12.4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+                  cache: 'pnpm'
+
+            - name: Install dependencies
+              run: pnpm install --frozen-lockfile
+
+            - name: Create Release Pull Request or Publish to npm
+              id: changesets
+              uses: changesets/action@v1
+              with:
+                  publish: pnpm ci:release
               env:
-                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

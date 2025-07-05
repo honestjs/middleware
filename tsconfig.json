@@ -1,36 +1,16 @@
 {
 	"compilerOptions": {
-		// Enable latest features
-		"lib": ["ESNext", "DOM"],
-		"target": "ESNext",
+		"target": "ES2022",
 		"module": "ESNext",
-		"moduleDetection": "force",
-
-		// Bundler mode
-		"moduleResolution": "bundler",
-		"allowImportingTsExtensions": true,
-		"verbatimModuleSyntax": true,
-
-		// Enable declaration file generation
-		"declaration": true,
-		"declarationMap": true,
-		"emitDeclarationOnly": true,
-		"outDir": "src/dist",
-		"rootDir": "src",
-		"sourceMap": true,
-
-		// Best practices
+		"moduleResolution": "node",
 		"strict": true,
-		"skipLibCheck": true,
-		"noFallthroughCasesInSwitch": true,
-		"forceConsistentCasingInFileNames": true,
 		"esModuleInterop": true,
-
-		// Some stricter flags (disabled by default)
-		"noUnusedLocals": false,
-		"noUnusedParameters": false,
-		"noPropertyAccessFromIndexSignature": false
+		"skipLibCheck": true
 	},
-	"include": ["src/**/*"],
+	"references": [
+		{ "path": "./packages/emoji-favicon-middleware" },
+		{ "path": "./packages/hono-middleware" }
+	],
+	"include": [],
 	"exclude": ["node_modules", "dist"]
 }

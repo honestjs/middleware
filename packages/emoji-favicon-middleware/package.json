@@ -1,0 +1,42 @@
+{
+	"name": "@honestjs/emoji-favicon-middleware",
+	"version": "0.0.0",
+	"description": "Emoji favicon middleware for HonestJS framework",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"clean": "rm -rf dist",
+		"type-check": "tsc --noEmit"
+	},
+	"keywords": [
+		"honestjs",
+		"middleware",
+		"favicon"
+	],
+	"author": "Orkhan Karimov <karimovok1@gmail.com> (https://github.com/kerimovok)",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/honestjs/middleware.git",
+		"directory": "packages/emoji-favicon-middleware"
+	},
+	"dependencies": {},
+	"devDependencies": {},
+	"peerDependencies": {
+		"honestjs": "^0.1.0",
+		"hono": "^4.0.0"
+	}
+}
