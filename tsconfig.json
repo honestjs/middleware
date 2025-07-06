@@ -7,10 +7,7 @@
 		"esModuleInterop": true,
 		"skipLibCheck": true
 	},
-	"references": [
-		{ "path": "./packages/emoji-favicon-middleware" },
-		{ "path": "./packages/hono-middleware" }
-	],
+	"references": [],
 	"include": [],
 	"exclude": ["node_modules", "dist"]
 }
