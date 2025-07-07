@@ -33,7 +33,7 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
 
-  packages/hono-middleware:
+  packages/middleware:
     dependencies:
       honestjs:
         specifier: ^0.1.0

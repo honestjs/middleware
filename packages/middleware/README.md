@@ -1,4 +1,4 @@
-# @honestjs/hono-middleware
+# @honestjs/middleware
 
 Hono middleware adapter for HonestJS framework, providing seamless integration with all Hono's built-in middleware.
 
@@ -8,10 +8,10 @@ Hono middleware adapter for HonestJS framework, providing seamless integration w
 ## Installation
 
 ```bash
-bun add @honestjs/hono-middleware
-pnpm add @honestjs/hono-middleware
-yarn add @honestjs/hono-middleware
-npm install @honestjs/hono-middleware
+bun add @honestjs/middleware
+pnpm add @honestjs/middleware
+yarn add @honestjs/middleware
+npm install @honestjs/middleware
 ```
 
 ## Basic Usage
@@ -20,7 +20,7 @@ npm install @honestjs/hono-middleware
 
 ```typescript
 import { Application } from 'honestjs'
-import { CorsMiddleware, LoggerMiddleware, SecureHeadersMiddleware } from '@honestjs/hono-middleware'
+import { CorsMiddleware, LoggerMiddleware, SecureHeadersMiddleware } from '@honestjs/middleware'
 
 const { hono } = await Application.create(AppModule, {
 	components: {
@@ -36,7 +36,7 @@ const { hono } = await Application.create(AppModule, {
 ### Method 2: Direct Hono Registration
 
 ```typescript
-import { EmojiFavicon, LoggerMiddleware } from '@honestjs/hono-middleware'
+import { EmojiFavicon, LoggerMiddleware } from '@honestjs/middleware'
 
 // Using .use method
 hono.use('*', new LoggerMiddleware().use)
@@ -61,7 +61,7 @@ HTTP Basic Authentication middleware.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/basic-auth)**
 
 ```typescript
-import { BasicAuthMiddleware } from '@honestjs/hono-middleware'
+import { BasicAuthMiddleware } from '@honestjs/middleware'
 
 // Simple username/password
 new BasicAuthMiddleware({
@@ -108,7 +108,7 @@ Bearer token authentication middleware.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/bearer-auth)**
 
 ```typescript
-import { BearerAuthMiddleware } from '@honestjs/hono-middleware'
+import { BearerAuthMiddleware } from '@honestjs/middleware'
 
 // Single token
 new BearerAuthMiddleware({ token: 'your-secret-token' })
@@ -142,7 +142,7 @@ JWT authentication middleware.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/jwt)**
 
 ```typescript
-import { JwtMiddleware } from '@honestjs/hono-middleware'
+import { JwtMiddleware } from '@honestjs/middleware'
 import type { JwtVariables } from 'hono/jwt'
 
 // Extend context types for JWT payload
@@ -186,7 +186,7 @@ Cross-Origin Resource Sharing middleware.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/cors)**
 
 ```typescript
-import { CorsMiddleware } from '@honestjs/hono-middleware'
+import { CorsMiddleware } from '@honestjs/middleware'
 
 // Simple CORS
 new CorsMiddleware()
@@ -230,7 +230,7 @@ Cross-Site Request Forgery protection middleware.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/csrf-protection)**
 
 ```typescript
-import { CsrfMiddleware } from '@honestjs/hono-middleware'
+import { CsrfMiddleware } from '@honestjs/middleware'
 
 // Basic CSRF protection
 new CsrfMiddleware()
@@ -249,7 +249,7 @@ Security headers middleware for enhanced security.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/secure-headers)**
 
 ```typescript
-import { SecureHeadersMiddleware } from '@honestjs/hono-middleware'
+import { SecureHeadersMiddleware } from '@honestjs/middleware'
 
 // Default security headers
 new SecureHeadersMiddleware()
@@ -294,7 +294,7 @@ Request body size limiting middleware.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/body-limit)**
 
 ```typescript
-import { BodyLimitMiddleware } from '@honestjs/hono-middleware'
+import { BodyLimitMiddleware } from '@honestjs/middleware'
 
 // 1MB limit
 new BodyLimitMiddleware({ maxSize: 1024 * 1024 })
@@ -318,7 +318,7 @@ Response compression middleware.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/compress)**
 
 ```typescript
-import { CompressionMiddleware } from '@honestjs/hono-middleware'
+import { CompressionMiddleware } from '@honestjs/middleware'
 
 // Default compression
 new CompressionMiddleware()
@@ -337,7 +337,7 @@ Request timeout middleware.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/timeout)**
 
 ```typescript
-import { TimeoutMiddleware } from '@honestjs/hono-middleware'
+import { TimeoutMiddleware } from '@honestjs/middleware'
 
 // 30 second timeout
 new TimeoutMiddleware(30000)
@@ -358,7 +358,7 @@ IP address restriction middleware.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/ip-restriction)**
 
 ```typescript
-import { IpRestrictionMiddleware } from '@honestjs/hono-middleware'
+import { IpRestrictionMiddleware } from '@honestjs/middleware'
 
 // Allow specific IPs
 new IpRestrictionMiddleware({
@@ -385,7 +385,7 @@ HTTP caching middleware.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/cache)**
 
 ```typescript
-import { CacheMiddleware } from '@honestjs/hono-middleware'
+import { CacheMiddleware } from '@honestjs/middleware'
 
 // Cache for 1 hour
 new CacheMiddleware({
@@ -408,7 +408,7 @@ Request ID generation middleware.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/request-id)**
 
 ```typescript
-import { RequestIdMiddleware } from '@honestjs/hono-middleware'
+import { RequestIdMiddleware } from '@honestjs/middleware'
 
 // Default request ID
 new RequestIdMiddleware()
@@ -429,7 +429,7 @@ HTTP request logging middleware.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/logger)**
 
 ```typescript
-import { LoggerMiddleware } from '@honestjs/hono-middleware'
+import { LoggerMiddleware } from '@honestjs/middleware'
 
 // Default logging
 new LoggerMiddleware()
@@ -447,7 +447,7 @@ Language detection middleware.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/language)**
 
 ```typescript
-import { LanguageDetectorMiddleware } from '@honestjs/hono-middleware'
+import { LanguageDetectorMiddleware } from '@honestjs/middleware'
 
 // Default language detection
 new LanguageDetectorMiddleware()
@@ -466,7 +466,7 @@ URL trailing slash handling middleware.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/trailing-slash)**
 
 ```typescript
-import { TrimTrailingSlashMiddleware, AppendTrailingSlashMiddleware } from '@honestjs/hono-middleware'
+import { TrimTrailingSlashMiddleware, AppendTrailingSlashMiddleware } from '@honestjs/middleware'
 
 // Remove trailing slashes
 new TrimTrailingSlashMiddleware()
@@ -484,7 +484,7 @@ JSX rendering middleware with layout support.
 **📚 [Official Hono Documentation](https://hono.dev/docs/middleware/builtin/jsx-renderer)**
 
 ```typescript
-import { JsxRendererMiddleware } from '@honestjs/hono-middleware'
+import { JsxRendererMiddleware } from '@honestjs/middleware'
 
 // Extend context renderer types
 declare module 'hono' {
@@ -538,7 +538,7 @@ app.get('/page', (c) => {
 Custom emoji favicon middleware.
 
 ```typescript
-import { EmojiFavicon } from '@honestjs/hono-middleware'
+import { EmojiFavicon } from '@honestjs/middleware'
 
 // Flame emoji favicon
 new EmojiFavicon('🔥')
@@ -554,7 +554,7 @@ new EmojiFavicon('🚀')
 Wrap any Hono middleware for use with HonestJS.
 
 ```typescript
-import { HonoMiddleware } from '@honestjs/hono-middleware'
+import { HonoMiddleware } from '@honestjs/middleware'
 import { poweredBy } from 'hono/powered-by'
 import { prettyJSON } from 'hono/pretty-json'
 
@@ -584,7 +584,7 @@ import {
   RequestIdMiddleware,
   JsxRendererMiddleware,
   EmojiFavicon
-} from '@honestjs/hono-middleware'
+} from '@honestjs/middleware'
 
 // Main layout component
 const MainLayout = ({ children, title }: { children: any; title?: string }) => (
