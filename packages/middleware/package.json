@@ -1,6 +1,6 @@
 {
 	"name": "@honestjs/middleware",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Collection of middleware without dependencies for HonestJS framework",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
