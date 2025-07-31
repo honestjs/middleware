@@ -1,4 +1,4 @@
-# HonestJS Middleware
+# HonestJS - Middleware
 
 Hono middleware adapter for HonestJS framework, providing seamless integration with all Hono's built-in middleware.
 
