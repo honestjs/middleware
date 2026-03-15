@@ -36,11 +36,11 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"honestjs": "^0.1.0",
+		"honestjs": "^0.1.11",
 		"hono": "^4.0.0"
 	},
 	"peerDependencies": {
-		"honestjs": "^0.1.0",
+		"honestjs": "^0.1.11",
 		"hono": "^4.0.0"
 	}
 }
