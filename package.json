@@ -4,6 +4,7 @@
 	"scripts": {
 		"build": "turbo build",
 		"dev": "turbo dev",
+		"test": "turbo test",
 		"type-check": "turbo type-check",
 		"clean": "turbo clean",
 		"changeset": "changeset",
@@ -20,7 +21,8 @@
 		"prettier": "^3.3.3",
 		"tsup": "^8.5.0",
 		"turbo": "^2.4.0",
-		"typescript": "^5.8.3"
+		"typescript": "^5.8.3",
+		"vitest": "^4.1.0"
 	},
 	"lint-staged": {
 		"*.{ts,tsx,js,jsx,json,md}": [
