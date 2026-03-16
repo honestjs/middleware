@@ -35,10 +35,9 @@
 		"url": "https://github.com/honestjs/middleware.git",
 		"directory": "packages/middleware"
 	},
-	"dependencies": {},
 	"devDependencies": {
 		"honestjs": "^0.1.11",
-		"hono": "^4.0.0"
+		"hono": "^4.12.8"
 	},
 	"peerDependencies": {
 		"honestjs": "^0.1.11",
