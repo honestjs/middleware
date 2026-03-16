@@ -36,11 +36,11 @@
 		"directory": "packages/middleware"
 	},
 	"devDependencies": {
-		"honestjs": "^0.1.13",
+		"honestjs": "^0.1.14",
 		"hono": "^4.12.8"
 	},
 	"peerDependencies": {
 		"honestjs": "^0.1.11",
-		"hono": "^4.0.0"
+		"hono": "^4.12.8"
 	}
 }
