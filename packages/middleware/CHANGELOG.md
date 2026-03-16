@@ -1,5 +1,11 @@
 # @honestjs/middleware
 
+## 1.1.0
+
+### Minor Changes
+
+- 030c7bc: Update dependencies and add testing setup.
+
 ## 1.0.1
 
 ### Patch Changes
