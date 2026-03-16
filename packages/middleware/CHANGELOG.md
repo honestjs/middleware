@@ -1,5 +1,11 @@
 # @honestjs/middleware
 
+## 1.1.1
+
+### Patch Changes
+
+- 26699ef: Update honestjs to version 0.1.13
+
 ## 1.1.0
 
 ### Minor Changes
