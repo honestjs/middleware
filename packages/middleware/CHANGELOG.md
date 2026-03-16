@@ -1,5 +1,11 @@
 # @honestjs/middleware
 
+## 1.1.2
+
+### Patch Changes
+
+- 6dcb550: Update honestjs to version 0.1.14
+
 ## 1.1.1
 
 ### Patch Changes
