@@ -1,5 +1,11 @@
 # @honestjs/middleware
 
+## 1.1.3
+
+### Patch Changes
+
+- 0113c65: Update dependencies
+
 ## 1.1.2
 
 ### Patch Changes
